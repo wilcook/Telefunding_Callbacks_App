@@ -1,0 +1,11 @@
+.jumbotron {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+#panelHeading {
+	background-color: blue;
+	color: white;
+	text-align: left;
+}
