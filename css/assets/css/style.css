@@ -1,0 +1,36 @@
+.btn {
+	background-color: #96150f;
+	color: #ceb3a2;
+	font-family: 'Lato', sans-serif;
+}
+
+.btn:hover {
+	background-color: #96590f;
+}
+
+body {
+	font-family: 'Libre Baskerville', serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+#fund {
+  color: #78100c;
+}
+
+  main {
+    flex: 1 0 auto;
+  }
+
+#metFooter {
+/*  	background-color: #c0c0c0;*/
+	background-color: #d2baa9;
+  	color: #2d2926;
+  }
+
+  a {
+  	color: #2d2926;
+  }
+
