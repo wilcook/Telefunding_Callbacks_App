@@ -10,8 +10,12 @@
 	<!-- google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville" rel="stylesheet">
 
+	<!-- materialize font icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
 	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="assets/materialize/css/materialize.min.js">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
 	<!-- my stylesheet -->
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -20,59 +24,97 @@
 <body>
 <!-- containder -->
 	<div class="container">
-	<!-- first well -->
+
+<!-- first well -->
 		<div class="well">
-		<!-- page title -->
+
+<!-- page title -->
 	  <h3>Add a new call back</h3>
-	  <!-- first row -->
+
+<!-- first row -->
 	  <div class="row">
-	    <form class="col s12">
+
+<!-- form -->	  
+<!-- <form class="col s12"> -->
+
+<!-- source code field -->
+	        <div class="input-field col s4">
+	          <input id="sourceCode" type="number" class="validate">
+	          <label for="source">Source Code</label>
+	        </div> 
+		
+
+<!-- fund dropdown menu -->	
+			  <div class="input-field col s4">		  
+			    <select id="fund">
+			      <option value="Guild">Guild</option>
+			      <option value="Patron">Patron</option>
+			      <option value="MOA">MOA</option>
+			    </select>
+			    <label>Fund</label>
+			  </div>
+
+<!-- fund & gift type dropdown menu -->	
+			  <div class="input-field col s4">		  
+			    <select id="giftType" multiple>
+			      <option value="Acq">Acquisition</option>
+			      <option value="Ren">Renewal</option>
+			      <option value="Res">Reinstate</option>
+  			      <option value="Up">Upgrade</option>	
+			    </select>
+			    <label>Gift Type</label>
+			  </div>
+
+<!-- closes first row div -->
+			  </div>
+
+<!-- second row -->
+	  <div class="row">  
+
+<!-- constituent ID field -->
 	        <div class="input-field col s6">
 	          <input id="cID" type="number" class="validate">
 	          <label for="cID">Constituent ID</label>
 	        </div> 
-			  <div class="input-field col s6">
-			    <select>
-			      <option value="Fund and Gift Type">Fund and Gift Type</option>
-			      <option value="MOG">MOG</option>
-			      <option value="MOA">MOA</option>
-			      <option value="Patron">Patron</option>
-			    </select>
-			    <label>Fund and Gift Type</label>
-			  </div>
-			  </div>
-	    <!-- third row -->
-	  <div class="row">   	
+
+<!-- phone -->
 	        <div class="input-field col s6">
-	          <input id="first_name" type="text" class="validate">
-	          <label for="first_name">First Name</label>
+			<label for="phone"><input id="phone" type="phone" class="validate"><i class="material-icons">phone</i></label>
 	        </div>
-	        <div class="input-field col s6">
-	          <input id="last_name" type="text" class="validate">
-	          <label for="last_name">Last Name</label>
-	        </div>
+
+<!-- closes second row div  -->
 	      </div>
-	      <!-- fourth row -->
+
+<!-- third row -->
 	      <div class="row">
+
+<!-- first name field -->
 	        <div class="input-field col s6">
-	          <input id="sCode" type="number" class="validate">
-	          <label for="cID">Source Code</label>
-	        </div>   
-	        <div class="input-field col s6">
-	          <input id="phone" type="phone" class="validate">
-	          <br><p class="lower"><label for="phone">Phone Number</label></p>
+	          <input id="firstName" type="text" class="validate">
+	          <label for="firstName">First Name</label>
 	        </div>
+
+<!-- last name field -->
+	        <div class="input-field col s6">
+	          <input id="lastName" type="text" class="validate">
+	          <label for="lastName">Last Name</label>
+	        </div>
+
+<!-- closes third row div -->
 	      </div>
-	    <!-- fifth row with first contact date -->
+
+<!-- fourth row with first contact date -->
 		<div class="well"><p>When did you first speak to this constituent?</p> 	
 	        <div class="input-field col s6">
-	          <input id="call0" type="date" class="validate">
-	          <label for="call0"></label>
+	          <input id="date0" type="date" class="validate">
+	          <label for="date0"></label>
 	        </div>
 	        <div class="input-field col s6">
 	          <input id="time0" type="time" class="validate">
 	          <label for="time0"></label>
 	        </div>
+
+<!-- sixth row with scheduled call back date -->
 	      	<p>When did you schedule a time to speak next?</p>  	
 	        <div class="input-field col s6">
 	          <input id="date1" type="date" class="validate">
@@ -83,19 +125,22 @@
 	          <label for="time1"></label>
 	      </div>
 	    </div>
-	  <!-- sixth row with scheduled call back date -->
+
+<!-- seventh row-->
       <div class="row">
+
+<!-- additional info -->
         <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <textarea id="notes" class="materialize-textarea"></textarea>
           <label for="textarea1">Additional Information</label>
         </div>
       </div>
-	    <a class="waves-effect waves-light btn">Submit</a>
-	</form>
+	    <a id="submit" class="waves-effect waves-light btn">Submit</a>
+	    <a id="clear" class="waves-effect waves-light btn">Clear</a>
+<!-- 	</form> -->
     </div>
 </div>	
 </div>
-
 
 <!-- footer -->
         <footer id="metFooter" class="page-footer">
@@ -126,6 +171,12 @@
 
 <!-- end of HTML body code, everything below is a script source -->
 
+<!-- require js -->
+<!-- <script src="assets/javascript/require.js" type="text/javascript"></script> -->
+
+<!-- moment js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js" type="text/javascript"></script>
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
@@ -133,14 +184,27 @@
 <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
 
+<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBWmPnBuDlM4Z2N_n1rgzwGh9oYBc-A1fg",
+    authDomain: "metoperatfcb.firebaseapp.com",
+    databaseURL: "https://metoperatfcb.firebaseio.com",
+    storageBucket: "metoperatfcb.appspot.com",
+    messagingSenderId: "308739311794"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
 <!-- Compiled and minified Materialize JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
-<!-- moment.js -->
-<script src="assets/javascript/moment/min/moment.js" type="text/javascript"></script>
 
 <!-- my javascript -->
 <script src="assets/javascript/fbase.js" type="text/javascript"></script>
+
 <!-- <script src="assets/javascript/login.js" type="text/javascript"></script> -->
 <script src="assets/javascript/addRecord.js" type="text/javascript"></script>
 </body>
