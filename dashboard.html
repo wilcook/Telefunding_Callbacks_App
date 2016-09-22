@@ -1,200 +1,96 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Call Back App Log In</title>
-		<!-- reset css -->
-	<link rel="stylesheet" href="assets/css/style.css">
-
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville" rel="stylesheet">
-
-	<!-- materialize font icons -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
-	<!-- my stylesheet -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/login.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <!-- reset css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville" rel="stylesheet">
+    <!-- materialize font icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- my stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/user.css">
 </head>
+
 <body>
-<!-- containder -->
-	<div class="container">
-
-<!-- first well -->
-		<div class="well">
-
-<!-- page title -->
-	  <h3>Add a new call back</h3>
-
-<!-- first row -->
-	  <div class="row">
-
-<!-- form -->	  
-<!-- <form class="col s12"> -->
-
-<!-- source code field -->
-	        <div class="input-field col s4">
-	          <input id="sourceCode" type="number" class="validate">
-	          <label for="source">Source Code</label>
-	        </div> 
-		
-
-<!-- fund dropdown menu -->	
-			  <div class="input-field col s4">		  
-			    <select id="fund">
-			      <option value="Guild">Guild</option>
-			      <option value="Patron">Patron</option>
-			      <option value="MOA">MOA</option>
-			    </select>
-			    <label>Fund</label>
-			  </div>
-
-<!-- fund & gift type dropdown menu -->	
-			  <div class="input-field col s4">		  
-			    <select id="giftType" multiple="multiple">
-			      <option value="Acq">Acquisition</option>
-			      <option value="Ren">Renewal</option>
-			      <option value="Res">Reinstate</option>
-  			      <option value="Up">Upgrade</option>	
-			    </select>
-			    <label>Gift Type</label>
-			  </div>
-
-<!-- closes first row div -->
-			  </div>
-
-<!-- second row -->
-	  <div class="row">  
-
-<!-- constituent ID field -->
-	        <div class="input-field col s6">
-	          <input id="cID" type="number" class="validate">
-	          <label for="cID">Constituent ID</label>
-	        </div> 
-
-<!-- phone -->
-	        <div class="input-field col s6">
-			<label for="phone"><input id="phone" type="phone" class="validate"><i class="material-icons">phone</i></label>
-	        </div>
-
-<!-- closes second row div  -->
-	      </div>
-
-<!-- third row -->
-	      <div class="row">
-
-<!-- first name field -->
-	        <div class="input-field col s6">
-	          <input id="firstName" type="text" class="validate">
-	          <label for="firstName">First Name</label>
-	        </div>
-
-<!-- last name field -->
-	        <div class="input-field col s6">
-	          <input id="lastName" type="text" class="validate">
-	          <label for="lastName">Last Name</label>
-	        </div>
-
-<!-- closes third row div -->
-	      </div>
-
-<!-- fourth row with first contact date -->
-		<div class="well"><p>When did you first speak to this constituent?</p> 	
-	        <div class="input-field col s6">
-	          <input id="date0" type="date" class="validate">
-	          <label for="date0"></label>
-	        </div>
-	        <div class="input-field col s6">
-	          <input id="time0" type="time" class="validate">
-	          <label for="time0"></label>
-	        </div>
-
-<!-- sixth row with scheduled call back date -->
-	      	<p>When did you schedule a time to speak next?</p>  	
-	        <div class="input-field col s6">
-	          <input id="date1" type="date" class="validate">
-	          <label for="date1"></label>
-	        </div>
-	        <div class="input-field col s6">
-	          <input id="time1" type="time" class="validate">
-	          <label for="time1"></label>
-	      </div>
-	    </div>
-
-<!-- seventh row-->
-      <div class="row">
-
-<!-- additional info -->
-        <div class="input-field col s12">
-          <textarea id="notes" class="materialize-textarea"></textarea>
-          <label for="textarea1">Additional Information</label>
+    <!-- containder -->
+    <div class="container">
+        <h3>Welcome, valued hourly worker!</h3>
+        <div class="row">
+            <div class="col s12">
+                <div class="dashBoard card-panel">
+                    <div class="row">
+                        <div class="col s4">
+                            <div class="card-panel">
+                                <span><h4><span id="firstName">Richard </span><span id="lastName">Donor</span></h4><p><span id="phoneNumber">(917) 555-1234</span></p>
+                                <p id="upComingCall">Mon, Oct 15th, 11:30 AM</p>
+                                <p><span id="fund">Guild, </span><span id="giftType">Renewal</span></p><p><span id="notes">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</span></p>
+                                </span>
+                            </div>
+                        </div>                   
+                        <div class="col s4">
+                            <div class="card-panel">
+                                <span><h4><span id="firstName">Margerie </span><span id="lastName">Patron</span></h4><p><span id="phoneNumber">(212) 444-5678</span>
+                                <p id="upComingCall">Thu, Oct 9th, 4:45 PM</p>
+                                <p><span id="fund">Patron, </span><span id="giftType">Reinstate</span></p><p><span id="notes">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</span></p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-	    <a id="submit" class="waves-effect waves-light btn">Submit</a>
-	    <a id="clear" class="waves-effect waves-light btn">Clear</a>
-<!-- 	</form> -->
     </div>
-</div>	
-</div>
-
-<!-- footer -->
-        <footer id="metFooter" class="page-footer">
-          <div class="container">
+    <!-- footer -->
+    <footer id="metFooter" class="page-footer">
+        <div class="container">
             <div class="row">
-              <div class="col l6 s12">
-                <img id="metLogo" src="assets/images/metlogo.png">
-                <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maxime numquam hic. Cupiditate voluptate necessitatibus, nemo ut molestiae distinctio minima quo dolores quaerat, eligendi! Cum quisquam nulla vel veritatis ullam!</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5>Links</h5>
-                <ul>
-                  <li><a href="#!">Upcoming call backs</a></li>
-                  <li><a href="#!">Summary</a></li>
-                  <li><a href="#!">Full History</a></li>
-                  <li><a href="#!">Link 4</a></li>
-                </ul>
-              </div>
+                <div class="col l6 s12">
+                    <img id="metLogo" src="assets/images/metlogo.png">
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maxime numquam hic. Cupiditate voluptate necessitatibus, nemo ut molestiae distinctio minima quo dolores quaerat, eligendi! Cum quisquam nulla vel veritatis ullam!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="#!">Upcoming call backs</a></li>
+                        <li><a href="#!">Summary</a></li>
+                        <li><a href="#!">Full History</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="footer-copyright">
+        </div>
+        <div class="footer-copyright">
             <div class="container">
-            © 2016 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                © 2016 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
-          </div>
-        </footer>
-
-<!-- end of HTML body code, everything below is a script source -->
-
-<!-- require js -->
-<!-- <script src="assets/javascript/require.js" type="text/javascript"></script> -->
-
-<!-- moment js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js" type="text/javascript"></script>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-
-<!-- firebase -->
-<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-
-
-<!-- Compiled and minified Materialize JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
-
-<!-- my javascript -->
-<script src="assets/javascript/fbase.js" type="text/javascript"></script>
-
-<!-- <script src="assets/javascript/login.js" type="text/javascript"></script> -->
-<script src="assets/javascript/addRecord.js" type="text/javascript"></script>
-
-<script src="assets/javascript/localmaterialize.js" type="text/javascript"></script>
+        </div>
+    </footer>
+    <!-- end of HTML body code, everything below is a script source -->
+    <!-- require js -->
+    <!-- <script src="assets/javascript/require.js" type="text/javascript"></script> -->
+    <!-- moment js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js" type="text/javascript"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <!-- Compiled and minified Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <!-- my javascript -->
+    <script src="assets/javascript/fbase.js" type="text/javascript"></script>
+    <!-- <script src="assets/javascript/login.js" type="text/javascript"></script> -->
+    <script src="assets/javascript/addRecord.js" type="text/javascript"></script>
+    <script src="assets/javascript/localmaterialize.js" type="text/javascript"></script>
 </body>
 
 </html>
