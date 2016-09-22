@@ -8,6 +8,17 @@
 	background-color: #96590f;
 }
 
+.btn-large {
+  background-color: #96150f;
+  color: #ceb3a2;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-large:hover {
+  background-color: #96590f;
+}
+
+
 body {
 	font-family: 'Libre Baskerville', serif;
     display: flex;

@@ -1,10 +1,6 @@
 $('document').ready(function() {
 
-    // // if a user is logged in, going to the login screen will log them out
-    // firebase.auth().signOut
-
     $("#login").on('click', function() {
-
         // variables 
         var email = $("#email").val().trim().toString();
         var password = $("#password").val().trim().toString();
@@ -19,25 +15,9 @@ $('document').ready(function() {
 
         // authentication
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            console.log("authentication script worked");
 
-            // event listener for authentication state change
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user !== null) {
-                    console.log('logged in!');
-                    console.log(firebase.auth.AuthCredential);
-
-                    // test authentication
-                    console.log("firebase.User: " + firebase.User);
-                    console.log("firebase.provider: " + firebase.provider);
-
-                    // console log the variables
-                    console.log("email: " + email);
-                }
-
-                // authentication listener closing brackets
-            });
-
-            // Handle Errors here.
+           // Handle Errors here.
             // variables to hold error messages
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -85,6 +65,26 @@ $('document').ready(function() {
 
         //closing brackets for forgot password on click event 
     });
+
+    var user = firebase.auth().currentUser;
+
+            // event listener for authentication state change
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user !== null) {
+                    console.log('logged in!');
+                    console.log("user: " + user);
+
+                    // test authentication
+                    console.log("firebase.User.uid: " + firebase.auth().currentUser.uid);
+
+                    // console log the variables
+                    console.log("email: " + email);
+                    url = "dashboard.html";
+                    $(location).attr("href", url);
+                }
+                
+                // authentication listener closing brackets
+            });
 
 
 

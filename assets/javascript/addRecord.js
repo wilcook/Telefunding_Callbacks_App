@@ -35,6 +35,7 @@ $(document).ready(function() {
         var dbTimeStamp = firebase.database.ServerValue.TIMESTAMP;
         var now = moment();
         var userID = firebase.auth().currentUser.uid;
+        var anyCriteria = (sourceCode || fund || giftType || cID || phoneNumber || firstName || lastName || date0 || time0 || date1 || time1 || notes)
 
         // console log variablees to hold user input
         console.log("sourceCode: " + sourceCode);
@@ -53,15 +54,20 @@ $(document).ready(function() {
         console.log("now: " + now);
         console.log("userID: " + userID);
 
+        if (anyCriteria == undefined || NaN){
+            alert("You must enter criteria in all fields.");
+        } else {
+
         // add users to database code
         database.ref().push({
             userID: userID,
             sourceCode: sourceCode,
             fund: fund,
-            // gift_type: giftType,
+            gift_type: giftType,
             constituent_ID: cID,
             first_name: firstName,
             last_name: lastName,
+            phone: phoneNumber,
             date0: date0,
             time0: time0,
             date1: date1,
@@ -69,8 +75,10 @@ $(document).ready(function() {
             notes: notes,
             time_stamp: dbTimeStamp
         });
-        return false;
+        window.location.assign("dashboard.html")
 
+    }
+        return false;
         // submit on click closing brackets
     });
 

@@ -1,4 +1,5 @@
 $('document').ready(function(){
+	console.log("fbase.js is loaded");
 
 // Initialize Firebase
   var config = {
@@ -8,6 +9,7 @@ $('document').ready(function(){
     storageBucket: "metoperatfcb.appspot.com",
     messagingSenderId: "308739311794"
   };
+
   firebase.initializeApp(config);
 
 // Create a variable to reference the database
